@@ -1,7 +1,7 @@
 Ferrum
 ======
 
-This utility allows you to scrape page data updated with javascript with a certain interval
+This utility allows you to periodically scrape page data and send changes to a server endpoint.
 
 To see it in action:
 
