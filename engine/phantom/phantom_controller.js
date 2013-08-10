@@ -2,13 +2,13 @@ if (typeof phantom.args[0] == 'undefined') {
 	error('Please supply url command line parameter');
 }
 
-var oPage 		= require('webpage').create(),
-	oFs 		= require('fs'),
-	sConfigPath	= 'config.txt',
-	oConfig		= {},
-	sUrl		= phantom.args[0],
-	bLoaded 	= false,
-	aScripts 	= [
+var oPage       = require('webpage').create(),
+	oFs         = require('fs'),
+	sConfigPath = 'config.txt',
+	oConfig     = {},
+	sUrl        = phantom.args[0],
+	bLoaded     = false,
+	aScripts    = [
 		'../js/jquery.js',
 		'../js/class.Scraper.js'
 	];
@@ -62,10 +62,10 @@ function getConfig(sPath) {
 	
 	if (typeof aLines != 'undefined') {
 		for (n=0; n<aLines.length; n++) {
-			if (aLines[n].replace(/[^\s]/g, '').length == 0) { continue; }				// Skip empty lines
-			aKeyVal = aLines[n].split('=');												// Split key=value
-			sKey = aKeyVal[0].replace(/^\s\s*/, '').replace(/\s\s*$/, '');				// Trim key
-			oConfig[sKey] = aKeyVal[1].replace(/^\s\s*/, '').replace(/\s\s*$/, '');		// Trim and save value
+			if (aLines[n].replace(/[^\s]/g, '').length == 0) { continue; }              // Skip empty lines
+			aKeyVal = aLines[n].split('=');                                             // Split key=value
+			sKey = aKeyVal[0].replace(/^\s\s*/, '').replace(/\s\s*$/, '');              // Trim key
+			oConfig[sKey] = aKeyVal[1].replace(/^\s\s*/, '').replace(/\s\s*$/, '');     // Trim and save value
 		}
 	}
 	return oConfig;
@@ -88,8 +88,8 @@ oPage.onConsoleMessage  = display;
 oPage.onAlert           = display;
 
 oPage.settings.localToRemoteUrlAccessEnabled = true;
-oPage.settings.webSecurityEnabled			 = false;
-oPage.settings.userAgent					 = 'Mozilla/5.0 (Macintosh; Intel Mac OS X)';
+oPage.settings.webSecurityEnabled            = false;
+oPage.settings.userAgent                     = 'Mozilla/5.0 (Macintosh; Intel Mac OS X)';
 
 oPage.open(sUrl, function (sStatus) {
 	console.log('Loaded ' + sUrl + '[' + sStatus + ']');
