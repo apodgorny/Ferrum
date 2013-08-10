@@ -1,7 +1,7 @@
 var Scraper = new function() {
 	var _nScrapeInterval = 5000;
-	var _oThis			 = this;
-	var _bCanScrape		 = false;
+	var _oThis           = this;
+	var _bCanScrape      = false;
 	
 	function _send(o) {
 		$.get(window.PHANTOM_SERVER_ENDPOINT + '?', o, function(oData) {

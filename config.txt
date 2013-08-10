@@ -1,2 +1,2 @@
-js				= run.js
-server_endpoint	= http://localhost/Ferrum/server.php
+js              = run.js
+server_endpoint = http://localhost/Ferrum/server.php
